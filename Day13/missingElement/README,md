@@ -1,0 +1,25 @@
+# Problem: Missing Number
+
+## Description
+Given an array `nums` containing `n` distinct numbers in the range `[0, n]`,  
+return the one number that is missing from the array.
+
+## Pattern
+Math / Arrays
+
+## Difficulty
+Easy
+
+## Approach
+1. Calculate the expected sum of numbers from `0` to `n` using the formula `n(n+1)/2`.
+2. Calculate the actual sum of elements in the array.
+3. The difference between expected sum and actual sum is the missing number.
+
+## Time Complexity
+O(n)
+
+## Space Complexity
+O(1)
+
+## Platform
+LeetCode
