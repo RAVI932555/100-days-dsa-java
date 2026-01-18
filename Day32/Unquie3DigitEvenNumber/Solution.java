@@ -1,0 +1,34 @@
+class Solution {
+    public static int totalNumbers(int[] digits) {
+        int freq[]=new int[11];
+        for(int i:digits){
+            freq[i]++;
+        }
+        int count=0;
+        for(int i=1;i<=9;i++){
+            if(freq[i]==0){
+                continue;
+            }
+            freq[i]--;
+            for(int j=0;j<=9;j++){
+                if(freq[j]==0){
+                    continue;
+                }
+                freq[j]--;
+                for(int k=0;k<=8;k+=2){
+                    if(freq[k]==0){
+                        continue;
+                    }
+                    count++;
+                }
+                freq[j]++;
+            }
+            freq[i]++;
+
+        }
+        return count;
+    }
+    public static void main(String arg[]){
+        System.out.println(totalNumbers(new int[]{1,2,3,4}));
+    }
+}
